@@ -30,14 +30,16 @@ class student(object):
 
 cookie = {'JSESSIONID' : 'JSID GOES HERE!'}
 dumpList = range(0,1000)
+dumpList = []
 
-for stNo in dumpList:
+for stNo in toDump:
 	url_basicInfo = 'https://portal2.aut.ac.ir/aportal/regadm/students/students.jsp?action=edit&st_no=' + str(stNo)+ '&st_info=personal&st_sub_info=0'
 	url_educatinInfo = 'https://portal2.aut.ac.ir/aportal/regadm/students/students.jsp?action=edit&st_no=' +  str(stNo) + '&st_info=educational&st_sub_info=0'
 	
 	reqBasic = requests.get(url_basicInfo, cookies=cookie, verify=False)
 	reqEdu = requests.get(url_educatinInfo, cookies=cookie, verify=False)
 	
+	print 'Getting ' + str(stNo) + '... '
 	print reqBasic.status_code
 	print reqEdu.status_code
 	
@@ -68,9 +70,14 @@ for stNo in dumpList:
 	st.gpe = edu_data[2]['value']
 	st.ccp = edu_data[4]['value']
 	st.cct = edu_data[3]['value']
+
+	if st.name == "null":
+		break
 	
-	fo = open(WORKING_DIR +  str(stNo) +  ".json", "wb")
-	fo.write(json.dumps(st.__dict__ , indent=4, sort_keys=True, ensure_ascii=False))
-	fo.close()
+	dumpList.append(json.dumps(st.__dict__ , indent=4, sort_keys=True, ensure_ascii=False))
 
 
+finalData = '[' + ','.join('{0}'.format(w) for w in dumpList) + ']'
+ffo = open(WORKING_DIR + "90130xx.json", "wb")
+ffo.write(finalData)
+ffo.close()
