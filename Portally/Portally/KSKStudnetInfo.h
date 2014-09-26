@@ -19,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *ulGPE;
 @property (strong, nonatomic) IBOutlet UILabel *ulCCP;
 @property (strong, nonatomic) IBOutlet UILabel *ulCCT;
+@property (strong, nonatomic) IBOutlet UIImageView *ivStudentImage;
 
 @property KSKStudent* currentStudent;
 

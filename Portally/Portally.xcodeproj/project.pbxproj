@@ -27,6 +27,7 @@
 		AA9636D619D07929001C9CC5 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = AA9636D519D07929001C9CC5 /* data.json */; };
 		AA9636D919D079BC001C9CC5 /* KSKStudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9636D819D079BC001C9CC5 /* KSKStudentCell.m */; };
 		AA9636DC19D07B96001C9CC5 /* KSKStudnetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9636DB19D07B96001C9CC5 /* KSKStudnetInfo.m */; };
+		AAFA33AE19D5C5D000E56D5E /* BTraffic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAFA33AD19D5C5D000E56D5E /* BTraffic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		AA9636D819D079BC001C9CC5 /* KSKStudentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSKStudentCell.m; sourceTree = "<group>"; };
 		AA9636DA19D07B96001C9CC5 /* KSKStudnetInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSKStudnetInfo.h; sourceTree = "<group>"; };
 		AA9636DB19D07B96001C9CC5 /* KSKStudnetInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSKStudnetInfo.m; sourceTree = "<group>"; };
+		AAFA33AD19D5C5D000E56D5E /* BTraffic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BTraffic.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		AA96366219D033D5001C9CC5 /* Portally */ = {
 			isa = PBXGroup;
 			children = (
+				AAFA33AF19D5C5D400E56D5E /* Fonts */,
 				AA96369419D033E4001C9CC5 /* Data */,
 				AA96366B19D033D5001C9CC5 /* KSKAppDelegate.h */,
 				AA96366C19D033D5001C9CC5 /* KSKAppDelegate.m */,
@@ -184,6 +187,14 @@
 				AA9636D519D07929001C9CC5 /* data.json */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		AAFA33AF19D5C5D400E56D5E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AAFA33AD19D5C5D000E56D5E /* BTraffic.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA96367319D033D5001C9CC5 /* Main_iPad.storyboard in Resources */,
+				AAFA33AE19D5C5D000E56D5E /* BTraffic.ttf in Resources */,
 				AA96367819D033D5001C9CC5 /* Images.xcassets in Resources */,
 				AA9636D619D07929001C9CC5 /* data.json in Resources */,
 				AA96367019D033D5001C9CC5 /* Main_iPhone.storyboard in Resources */,

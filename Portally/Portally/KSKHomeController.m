@@ -113,6 +113,7 @@ NSMutableArray* allStudents;
             
             student = [filteredStudentArray objectAtIndex:indexPath.row];
             [cell textLabel].text = student.studentId;
+            [cell textLabel].font = [UIFont fontWithName:@"B Traffic" size:22.f];
             
         }
     } else {
@@ -121,6 +122,7 @@ NSMutableArray* allStudents;
     
     [cell stId].text = student.studentId;
     [cell stName].text = student.name;
+    [cell stName].font = [UIFont fontWithName:@"B Traffic" size:22.f];
     
     return cell;
 }

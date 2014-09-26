@@ -8,6 +8,10 @@
 
 #import "KSKStudnetInfo.h"
 
+@interface NSURLRequest (DummyInterface)
++ (void)setAllowsAnyHTTPSCertificate:(BOOL)allow forHost:(NSString*)host;
+@end
+
 @implementation KSKStudnetInfo
 
 
@@ -21,9 +25,25 @@
         _ulDepartment .text = _currentStudent.department;
         _ulStatus.text = _currentStudent.status;
         _ulId.text = _currentStudent.studentId;
-        _ulGPE.text = [NSString stringWithFormat:@"%@: %@" , @"GPE ",_currentStudent.gpe];
-        _ulCCP.text = [NSString stringWithFormat:@"%@: %@" , @"CCP ",_currentStudent.ccp];
-        _ulCCT.text = [NSString stringWithFormat:@"%@: %@" , @"CCT ",_currentStudent.cct];
+        _ulGPE.text = [NSString stringWithFormat:@"%@: %@" , @"معدل کل ",_currentStudent.gpe];
+        _ulCCP.text = [NSString stringWithFormat:@"%@: %@" ,@"واحدهای پاس شده ",_currentStudent.ccp];
+        _ulCCT.text = [NSString stringWithFormat:@"%@: %@" , @"واحدهای اخذ شده ",_currentStudent.cct];
+        
+        
+        
+        NSString* temp = [_currentStudent.picUrl stringByReplacingOccurrencesOfString:@"../../" withString:@""];
+        NSString* IMAGE_URL = [NSString stringWithFormat:@"%@%@", @"https://portal2.aut.ac.ir/aportal/", temp];
+        
+        
+        [NSURLRequest setAllowsAnyHTTPSCertificate:YES forHost:[[NSURL URLWithString:IMAGE_URL] host]];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:IMAGE_URL]];
+        [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+            
+            if(data != nil){
+                _ivStudentImage.image= [UIImage imageWithData:data];
+            }}];
+        
+        
     }
 }
 
